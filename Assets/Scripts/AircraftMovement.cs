@@ -5,7 +5,7 @@ using UnityEngine;
 public class AircraftMovement : MonoBehaviour
 {
     [SerializeField] private VariableJoystick variableJoystick;
-    private float aircraftSpeed;
+    [SerializeField] private IntVariable aircraftSpeed;
     private float aircraftTurnSpeed;
     private Vector3 aircraftMovementDirection;
     private Rigidbody aircraftRigidbody;
@@ -14,14 +14,13 @@ public class AircraftMovement : MonoBehaviour
     private void Awake() 
     {
         aircraftRigidbody = GetComponent<Rigidbody>();
-        aircraftSpeed = 10;
-        aircraftTurnSpeed = aircraftSpeed * 3f;
     }
 
     private void FixedUpdate() 
     {
+        aircraftTurnSpeed = aircraftSpeed.GetValue() * 2f;
+        transform.position += transform.forward * aircraftSpeed.GetValue() * Time.deltaTime;
         MoveAircraft();
-        transform.position += transform.forward * aircraftSpeed * Time.deltaTime;
     }
     private void MoveAircraft()
     {
