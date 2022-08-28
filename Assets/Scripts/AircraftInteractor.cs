@@ -1,17 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using PathCreation;
 
 public class AircraftInteractor : MonoBehaviour
 {
-    [SerializeField] private LayerMask checkPoint;
+    [SerializeField] private CanvasController canvasController;
     [SerializeField] private CheckPointManager checkPointManager;
+    [SerializeField] private LayerMask checkPoint;
+
+    [Header ("Path Creator")]
+    [SerializeField] private PathCreator pathCreator;
+    private float distanceTravelled;
+    [SerializeField] private EndOfPathInstruction finishPosition;
     private GameObject currentCheckPoint;
+    private Ray ray;
     private RaycastHit hit;
 
-    private void FixedUpdate() 
+
+    private void Update() 
     {
-        Ray ray = new Ray(transform.position, transform.forward);
+        ray = new Ray(transform.position, transform.forward);
 
         if(Physics.Raycast(ray, out hit, 15, checkPoint))
         {
@@ -29,6 +39,15 @@ public class AircraftInteractor : MonoBehaviour
                 currentCheckPoint.GetComponent<CheckPoint>().isCorrectCheckPoint = false;
                 currentCheckPoint.GetComponent<CheckPoint>().checkPointMeshRenderer.material.color = Color.red;
             }
+        }
+
+        if(checkPointManager.CheckPoints.Count <= 0)
+        {
+            distanceTravelled += 20 * Time.deltaTime;
+            transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, finishPosition);
+            transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled, finishPosition);
+
+            canvasController.winPanel.SetActive(true);
         }
     }
 }

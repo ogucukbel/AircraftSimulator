@@ -8,9 +8,9 @@ public class IntVariable : ScriptableObject
     public int intVariable;
     public int maxIntVariable;
 
-    public void SetValue(float amount)
+    public void SetValue(int amount)
     {
-        intVariable = Mathf.Clamp(intVariable, 0, maxIntVariable);
+        intVariable = Mathf.Clamp(amount, 0, maxIntVariable);
     }
 
     public void Increase(int increaseAmount)

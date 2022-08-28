@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class AircraftMovement : MonoBehaviour
 {
-    [SerializeField] private VariableJoystick variableJoystick;
+    [SerializeField] private GameObject aircraftGameObject;
     [SerializeField] private IntVariable aircraftSpeed;
-    private float aircraftTurnSpeed;
     private Vector3 aircraftMovementDirection;
     private Rigidbody aircraftRigidbody;
-    [SerializeField] private GameObject aircraftGameObject;
     
     private void Awake() 
     {
@@ -18,21 +16,14 @@ public class AircraftMovement : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        aircraftTurnSpeed = aircraftSpeed.GetValue() * 2f;
         transform.position += transform.forward * aircraftSpeed.GetValue() * Time.deltaTime;
-        MoveAircraft();
     }
-    private void MoveAircraft()
+
+    public void MoveAircraft(float _aircraftXAxisMovement, float _aircraftYAxisMovement)
     {
-        float aircraftXAxisMovement = variableJoystick.Horizontal;
-        float aircraftYAxisMovement = variableJoystick.Vertical;
+        aircraftMovementDirection = new Vector3(_aircraftXAxisMovement * 20, _aircraftYAxisMovement * 10, this.transform.position.z);
+        aircraftRigidbody.MoveRotation(Quaternion.LookRotation(aircraftMovementDirection));
 
-        if(aircraftXAxisMovement != 0 && aircraftYAxisMovement != 0)
-        {
-            aircraftMovementDirection += new Vector3(aircraftXAxisMovement * aircraftTurnSpeed, aircraftYAxisMovement * aircraftTurnSpeed, this.transform.position.z);
-            aircraftRigidbody.MoveRotation(Quaternion.LookRotation(aircraftMovementDirection));
-
-            aircraftGameObject.transform.LeanRotateZ(aircraftXAxisMovement * -30, 2);
-        }
+        aircraftGameObject.transform.LeanRotateZ(_aircraftXAxisMovement * -45, 1);
     }
 }

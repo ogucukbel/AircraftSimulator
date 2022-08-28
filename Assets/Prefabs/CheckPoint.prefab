@@ -94,8 +94,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.11018293, y: 0.098223835, z: 0.05540649}
-  m_Center: {x: -0.002598946, y: -0.00017091274, z: -0.012505915}
+  m_Size: {x: 0.155269, y: 0.12735945, z: 0.05540649}
+  m_Center: {x: 0.00077733514, y: 0.0012779807, z: -0.012505915}
 --- !u!114 &8560987498955355542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8cb0001e67ab049934647b41217050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCorrectCheckPoint: 0
   checkPointMeshRenderer: {fileID: 0}
   score: {fileID: 11400000, guid: 76cb2ee098d02a042854b97fa28a6744, type: 2}
   airCraft:

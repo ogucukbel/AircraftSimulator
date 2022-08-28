@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{67213618-b6e4-4baa-625b-bac0101ad0aa}</ProjectGuid>
+    <ProjectGuid>{080451f7-43ce-8de7-4e52-72d83859a833}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -39,54 +39,37 @@
      <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
      <Compile Include="Assets\Scripts\Variables\BoolVariable.cs" />
      <Compile Include="Assets\LeanTween\Framework\LeanTween.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\LogoCinematic.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralCameraShake.cs" />
      <Compile Include="Assets\LeanTween\Framework\LTDescr.cs" />
      <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
      <Compile Include="Assets\LeanTween\Framework\LeanTweenExt.cs" />
      <Compile Include="Assets\Scripts\AircraftMovement.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingUnitTests.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Archived\TestingPunch.cs" />
      <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
      <Compile Include="Assets\LeanTween\Framework\LTSeq.cs" />
      <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralUISpace.cs" />
      <Compile Include="Assets\LeanTween\Framework\LeanAudio.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSimpleUI.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineEndless.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline.cs" />
+     <Compile Include="Assets\Scripts\Variables\IntVariable.cs" />
+     <Compile Include="Assets\Scripts\CanvasController.cs" />
      <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralAdvancedTechniques.cs" />
+     <Compile Include="Assets\Scripts\CheckPoint.cs" />
      <Compile Include="Assets\LeanTween\Framework\LeanSmooth.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralBasics2d.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplines.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralEventsListeners.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineTrack.cs" />
      <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
      <Compile Include="Assets\LeanTween\Framework\LeanTest.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingZLegacy.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline2d.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingZLegacyExt.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplinePerformance.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier2d.cs" />
+     <Compile Include="Assets\Scripts\CheckPointManager.cs" />
      <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
      <Compile Include="Assets\Scripts\AircraftInteractor.cs" />
      <Compile Include="Assets\LeanTween\Framework\LTDescrOptional.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralEasingTypes.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSequencer.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Archived\OldGUIExamplesCS.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralBasic.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
-     <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
-     <Compile Include="Assets\Scripts\CheckPointManager.cs" />
-     <Compile Include="Assets\Scripts\CheckPoint.cs" />
-     <Compile Include="Assets\Scripts\Variables\IntVariable.cs" />
-     <Compile Include="Assets\Scripts\CanvasController.cs" />
+     <Compile Include="Assets\Scripts\JoystickInputController.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\PathSceneTool.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\PathSpawner.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\PathPlacer.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\PathFollower.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\GeneratePathExample.cs" />
      <None Include="Assets\LeanTween\ReadMe.txt" />
+     <None Include="Assets\Fantasy Skybox FREE\Readme.txt" />
      <None Include="Assets\LeanTween\License.txt" />
-     <None Include="Assets\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
+     <None Include="Assets\Fantasy Skybox FREE\ReleaseNotes.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.32f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -655,37 +638,45 @@
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.32f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>C:\Users\Özlem\FlightSimulator\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>C:\Users\Özlem\Documents\GitHub\AircraftSimulator\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>C:\Users\Özlem\FlightSimulator\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>C:\Users\Özlem\Documents\GitHub\AircraftSimulator\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>C:\Users\Özlem\FlightSimulator\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>C:\Users\Özlem\Documents\GitHub\AircraftSimulator\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>C:\Users\Özlem\FlightSimulator\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>C:\Users\Özlem\Documents\GitHub\AircraftSimulator\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>C:\Users\Özlem\FlightSimulator\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+        <HintPath>C:\Users\Özlem\Documents\GitHub\AircraftSimulator\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>C:\Users\Özlem\FlightSimulator\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+        <HintPath>C:\Users\Özlem\Documents\GitHub\AircraftSimulator\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>C:\Users\Özlem\FlightSimulator\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+        <HintPath>C:\Users\Özlem\Documents\GitHub\AircraftSimulator\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>C:\Users\Özlem\FlightSimulator\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+        <HintPath>C:\Users\Özlem\Documents\GitHub\AircraftSimulator\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>C:\Users\Özlem\FlightSimulator\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+        <HintPath>C:\Users\Özlem\Documents\GitHub\AircraftSimulator\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>C:\Users\Özlem\FlightSimulator\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+        <HintPath>C:\Users\Özlem\Documents\GitHub\AircraftSimulator\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="PathCreatorEditor.csproj">
+      <Project>{59d753ce-068b-f7f3-0233-440f42829746}</Project>
+      <Name>PathCreatorEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="PathCreator.csproj">
+      <Project>{66c4a842-d696-3f10-8dac-bec118e9f272}</Project>
+      <Name>PathCreator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
