@@ -18,7 +18,7 @@ public class CheckPointManager : MonoBehaviour
         {
             distanceAirplaneToCheckPoint = Vector3.Distance(CheckPoints[0].transform.position, aircraft.transform.position);
 
-            if(distanceAirplaneToCheckPoint > 70)
+            if(distanceAirplaneToCheckPoint > 100)
             {
                 canvasController.failPanel.SetActive(true);
             }

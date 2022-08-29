@@ -18,7 +18,8 @@ public class CheckPoint : MonoBehaviour
     {
         if((airCraft.value & (1 << other.transform.gameObject.layer)) > 0)
         {
-            LeanTween.scale(this.gameObject, Vector3.one * 80, 1).setOnComplete(DestoryCheckPoint);
+            LeanTween.scale(this.gameObject, Vector3.one * 100, 0.4f).setOnComplete(DestoryCheckPoint);
+            
             if(isCorrectCheckPoint)
             {
                 score.Increase(1);

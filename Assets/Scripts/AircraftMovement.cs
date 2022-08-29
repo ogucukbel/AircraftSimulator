@@ -8,6 +8,7 @@ public class AircraftMovement : MonoBehaviour
     [SerializeField] private IntVariable aircraftSpeed;
     private Vector3 aircraftMovementDirection;
     private Rigidbody aircraftRigidbody;
+    private int turnAircraftSpeed;
     
     private void Awake() 
     {
@@ -21,9 +22,31 @@ public class AircraftMovement : MonoBehaviour
 
     public void MoveAircraft(float _aircraftXAxisMovement, float _aircraftYAxisMovement)
     {
-        aircraftMovementDirection = new Vector3(_aircraftXAxisMovement * 20, _aircraftYAxisMovement * 10, this.transform.position.z);
-        aircraftRigidbody.MoveRotation(Quaternion.LookRotation(aircraftMovementDirection));
 
-        aircraftGameObject.transform.LeanRotateZ(_aircraftXAxisMovement * -45, 1);
+        if(aircraftSpeed.GetValue() < 10)
+        {
+            turnAircraftSpeed = 10;
+
+            aircraftMovementDirection = new Vector3(0, _aircraftYAxisMovement * turnAircraftSpeed, this.transform.position.z);
+            aircraftRigidbody.MoveRotation(Quaternion.LookRotation(aircraftMovementDirection));
+        }
+        else if(aircraftSpeed.GetValue() >= 25)
+        {
+            turnAircraftSpeed = 25;
+
+            aircraftMovementDirection = new Vector3(_aircraftXAxisMovement * turnAircraftSpeed, _aircraftYAxisMovement * turnAircraftSpeed, this.transform.position.z);
+            aircraftRigidbody.MoveRotation(Quaternion.LookRotation(aircraftMovementDirection));
+
+            aircraftGameObject.transform.LeanRotateZ(_aircraftXAxisMovement * -45, 1);
+        }
+        else 
+        {
+            turnAircraftSpeed = aircraftSpeed.GetValue();
+
+            aircraftMovementDirection = new Vector3(_aircraftXAxisMovement * turnAircraftSpeed, _aircraftYAxisMovement * turnAircraftSpeed, this.transform.position.z);
+            aircraftRigidbody.MoveRotation(Quaternion.LookRotation(aircraftMovementDirection));
+
+            aircraftGameObject.transform.LeanRotateZ(_aircraftXAxisMovement * -45, 1);
+        }
     }
 }

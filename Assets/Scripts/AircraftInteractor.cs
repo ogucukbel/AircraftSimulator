@@ -6,9 +6,15 @@ using PathCreation;
 
 public class AircraftInteractor : MonoBehaviour
 {
+
+    [Header ("Classes & Gameobjects")]
+    [SerializeField] private ParticleSystem fire;
     [SerializeField] private CanvasController canvasController;
     [SerializeField] private CheckPointManager checkPointManager;
+
+     [Header ("Layers")]
     [SerializeField] private LayerMask checkPoint;
+    [SerializeField] private LayerMask ground;
 
     [Header ("Path Creator")]
     [SerializeField] private PathCreator pathCreator;
@@ -48,6 +54,15 @@ public class AircraftInteractor : MonoBehaviour
             transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled, finishPosition);
 
             canvasController.winPanel.SetActive(true);
+        }
+    }
+
+    private void OnCollisionEnter(Collision other) 
+    {
+        if((ground.value & (1 << other.transform.gameObject.layer)) > 0)
+        {
+            Instantiate(fire, this.transform.position, Quaternion.identity);
+            canvasController.failPanel.SetActive(true);
         }
     }
 }

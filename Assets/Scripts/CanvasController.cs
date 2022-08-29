@@ -6,11 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class CanvasController : MonoBehaviour
 {
+    [Header ("ScriptableObjects")]
+    [SerializeField] private IntVariable score;
+    [SerializeField] private IntVariable aircraftSpeed;
+
+    [Header ("UI Objects")]
     public GameObject winPanel;
     public GameObject failPanel;
-    [SerializeField] private IntVariable score;
+    [SerializeField] private Text distanceText;
     [SerializeField] private Text scoreText;
-    [SerializeField] private IntVariable aircraftSpeed;
     [SerializeField] private Slider speedSlider;
     private int tempSpeed;
 

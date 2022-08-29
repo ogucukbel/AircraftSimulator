@@ -16,12 +16,11 @@ public class JoystickInputController : MonoBehaviour, IPointerDownHandler, IPoin
     {
         variableJoystick = GetComponent<VariableJoystick>();
     }
+
     public void OnPointerDown(PointerEventData eventData)
     {
-
-        aircraftMovement.MoveAircraft(tempAircraftXAxisMovement, tempAircraftYAxisMovement);
+        aircraftMovement.MoveAircraft(aircraftXAxisMovement, aircraftXAxisMovement);
     }
-
     public void OnPointerUp(PointerEventData eventData)
     {
         aircraftMovement.MoveAircraft(tempAircraftXAxisMovement, tempAircraftYAxisMovement);
